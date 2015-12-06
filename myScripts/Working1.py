@@ -10,12 +10,17 @@ client = MongoClient('localhost', 27017)
 print ("It works!")
 # :)
 
-print client.database_names()  # python 2 print usage !
+# print client.database_names()  # python 2 print usage !
 # it works and prints available databases :)
 
-print client.collection_names()
+# print client.collection_names()
 
-db = client.mongo1.microblogging  # ...
+dbc = client.mongo1.microblogging  # ...
+
+distinctUsersList = dbc.distinct("id_member")
+print (len(distinctUsersList))
+#results: #119231
+
 
 
 

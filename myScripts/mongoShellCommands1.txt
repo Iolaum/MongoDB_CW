@@ -1,0 +1,17 @@
+use mongo1
+
+show databases
+
+# need add a file to show db
+
+mongoimport --host=127.0.0.1 -d mongo1 -c microblogging --type csv --file D:\046_mongodb_cw\data.csv --headerline
+
+
+db.createUser(
+{ user: "nik1",
+  pwd: "grafiti123098",
+  roles: [
+  "readWrite"
+  ]
+  }
+)
