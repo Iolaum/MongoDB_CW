@@ -1,0 +1,4 @@
+1. Test Encoding?
+2. Timestamps?
+3. Geo Locations?
+4. tweet and member ids?

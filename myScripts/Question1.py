@@ -1,14 +1,24 @@
-# Learning from pymongo tutorials.
-# http://api.mongodb.org/python/current/tutorial.html
-# 5.12.2015
+"""
 
-#
+Learning from pymongo tutorials.
+http://api.mongodb.org/python/current/tutorial.html
+5.12.2015
+
+
+Script to answer question 1:
+How many unique users are there?
+"""
 
 from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
 
-print ("It works!")
-# :)
+
+client = MongoClient('localhost', 27017)
+if client is None:
+    print "Couldn't connect!"
+else:
+    print ("Connected.")
+
+
 
 # print client.database_names()  # python 2 print usage !
 # it works and prints available databases :)
@@ -18,11 +28,13 @@ print ("It works!")
 dbc = client.mongo1.microblogging  # ...
 
 distinctUsersList = dbc.distinct("id_member")
+print "Number of unique users is:"
 print (len(distinctUsersList))
-#results: #119231
+# results: #119231
 
 
-
+client.close()
+print "Disconnected."
 
 
 

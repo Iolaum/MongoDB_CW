@@ -1,17 +1,22 @@
-# Learning from pymongo tutorials.
-# http://api.mongodb.org/python/current/tutorial.html
-# 5.12.2015
+"""
+Question 5:
+What is the mean length of a message?
+Question 7:
+What is the average number of hashtags (#) used within a message?
 
-#
-
+"""
 from pymongo import MongoClient
-import pymongo
-client = MongoClient('localhost', 27017)
+# import pymongo
 
-print ("Connected.")  # make check for failure
+
+client = MongoClient('localhost', 27017)
+if client is None:
+    print "Couldn't connect!"
+else:
+    print ("Connected.")
+
 
 dbc = client.mongo1.microblogging  # ...
-
 cursor = dbc.find()#.limit(150000)
 
 textLength = 0
@@ -20,13 +25,14 @@ notAString = 0
 dummyVar = 0
 badLength = 0
 badhashtags = 0
+
 for i in cursor:
     # print len(i["text"]), i["text"].count('#')
     if isinstance(i["text"], basestring):
         textLength += len(i["text"])
         hashtags += i["text"].count('#')
     else:
-        print i
+        # print i
         notAString += 1
         dummyVar = str(i["text"])
         badLength += len(dummyVar)
@@ -40,6 +46,15 @@ print badhashtags
 client.close()
 print "Disconnected."
 
+"""
+Results:
+104222324
+454972
+45
+162
+0
+
+"""
 
 
 

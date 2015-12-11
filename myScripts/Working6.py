@@ -1,13 +1,19 @@
-# Question 8
-# Which area within the UK contains the largest number of published messages?
-# Hint, the geographic latitude and longitude coordinates can be aggregated.
-#
+"""
+Question 8:
+Which area within the UK contains the largest number of published messages?
+Hint, the geographic latitude and longitude coordinates can be aggregated.
+
+"""
 
 from pymongo import MongoClient
-import pymongo
-client = MongoClient('localhost', 27017)
+# import pymongo
 
-print ("Connected.")  # make check for failure
+
+client = MongoClient('localhost', 27017)
+if client is None:
+    print "Couldn't connect!"
+else:
+    print ("Connected.")
 
 dbc = client.mongo1.microblogging  # ...
 
@@ -42,6 +48,14 @@ dbc = client.mongo1.microblogging  # ...
 #     else:
 #         wordsList2 = str(i["text"]).split()
 #
+
+"""
+
+49.4 59.4
+
+-7.9 2.1
+
+"""
 
 client.close()
 print "Disconnected."
