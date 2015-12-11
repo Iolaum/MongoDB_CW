@@ -1,3 +1,6 @@
+from __future__ import division
+from pymongo import MongoClient
+
 """
 Question 5:
 What is the mean length of a message?
@@ -5,7 +8,8 @@ Question 7:
 What is the average number of hashtags (#) used within a message?
 
 """
-from pymongo import MongoClient
+
+
 # import pymongo
 
 
@@ -44,8 +48,20 @@ print hashtags
 print notAString
 print badLength
 print badhashtags
+
+tl = textLength + badLength
+docs = 1459434
+
+tavg = tl/docs
+havg = hashtags /docs
+
+print tavg
+print havg
+
 client.close()
 print "Disconnected."
+
+
 
 """
 Results (basestring):
@@ -55,6 +71,8 @@ Results (basestring):
 162
 0
 
+
+1459434
 """
 
 
