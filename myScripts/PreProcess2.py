@@ -61,3 +61,7 @@ with open(inputFile, 'rU') as f:
 resultFile.close()
 badFile.close()
 
+# 1459434 entries for output1.csv
+# 427 tweets for output2.csv
+
+

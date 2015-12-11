@@ -29,7 +29,7 @@ badhashtags = 0
 
 for i in cursor:
     # print len(i["text"]), i["text"].count('#')
-    if isinstance(i["text"], basestring):
+    if isinstance(i["text"], basestring):  #  str
         textLength += len(i["text"])
         hashtags += i["text"].count('#')
     else:
@@ -48,9 +48,9 @@ client.close()
 print "Disconnected."
 
 """
-Results (PreCleaning):
-104222324
-454972
+Results (basestring):
+1041765534
+454656
 45
 162
 0

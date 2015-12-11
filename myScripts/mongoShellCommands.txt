@@ -1,12 +1,16 @@
-use mongo1
+- mongodb service starts on startup
+- manually: net start/stop mongodb
 
-show databases
+- Once in mongo:
+	use mongo1
+	show databases
 
 # need add a file to show db
 
 mongoimport --host=127.0.0.1 -d mongo1 -c microblogging --type csv --file D:\046_mongodb_cw\data.csv --headerline
+	> was used to add unclean data to familiarise ourselves with the data and the database.
 
-
+- User added, not used.
 db.createUser(
 { user: "nik1",
   pwd: "grafiti123098",
@@ -16,12 +20,6 @@ db.createUser(
   }
 )
 
-
-use mongo1
-db.microblogging.count()
-1459861
-
-
-
+- add clean data from command prompt:
 mongoimport --host=127.0.0.1 -d mongo1 -c microblogging --type csv --file D:\046_mongodb_cw\myScripts\output1.csv --headerline
 > imported 1459434 documents!

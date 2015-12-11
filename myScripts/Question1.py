@@ -1,10 +1,4 @@
 """
-
-Learning from pymongo tutorials.
-http://api.mongodb.org/python/current/tutorial.html
-5.12.2015
-
-
 Script to answer question 1:
 How many unique users are there?
 """
@@ -30,7 +24,7 @@ dbc = client.mongo1.microblogging  # ...
 distinctUsersList = dbc.distinct("id_member")
 print "Number of unique users is:"
 print (len(distinctUsersList))
-# results: #119231
+# results: #119218
 
 
 client.close()

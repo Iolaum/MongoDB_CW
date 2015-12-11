@@ -31,7 +31,7 @@ mapper = Code("""
 			}
 			for (j=0 ; j < (gramList.length - 1) ;j++) {
 			var bigram = gramList[j] + " " + gramList[j+1];
-			// emit(bigram,1);
+			emit(bigram,1);
 			}
 		}
 """)

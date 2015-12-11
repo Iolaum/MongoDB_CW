@@ -90,6 +90,7 @@ for i in query1:
 print tweetNumber
 
 #  tweetNumber = 32344
+# total good = 1459434
 
 
 client.close()
