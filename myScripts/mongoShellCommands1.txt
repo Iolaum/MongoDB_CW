@@ -15,3 +15,13 @@ db.createUser(
   ]
   }
 )
+
+
+use mongo1
+db.microblogging.count()
+1459861
+
+
+
+mongoimport --host=127.0.0.1 -d mongo1 -c microblogging --type csv --file D:\046_mongodb_cw\myScripts\output1.csv --headerline
+> imported 1459434 documents!

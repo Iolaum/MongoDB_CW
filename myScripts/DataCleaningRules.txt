@@ -2,3 +2,15 @@
 2. Timestamps?
 3. Geo Locations?
 4. tweet and member ids?
+
+Implemented:
+
+
+Cleaning v1:
+
+1. Checked if row length is not 6
+	then concatenate with the next one	until an array with len6 comes!
+	save bad ones in another file.
+
+2. Added dummy User Id's for invalid user Id's. 
+	We assume that regular users are logged properly and hence we have incorrect id's for new users.

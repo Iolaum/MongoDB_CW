@@ -19,6 +19,7 @@ else:
 dbc = client.mongo1.microblogging  # ...
 
 cursor = dbc.find().sort("timestamp", pymongo.ASCENDING).limit(1)
+
 for latDate in cursor:
     print(latDate)
     print (type(latDate["timestamp"]))

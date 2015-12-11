@@ -19,6 +19,7 @@ else:
 dbc = client.mongo1.microblogging  # ...
 cursor = dbc.find()#.limit(150000)
 
+
 textLength = 0
 hashtags = 0
 notAString = 0
@@ -47,7 +48,7 @@ client.close()
 print "Disconnected."
 
 """
-Results:
+Results (PreCleaning):
 104222324
 454972
 45
