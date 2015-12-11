@@ -23,5 +23,6 @@ reader = csv.DictReader( csvfile, fieldnames, dialect=csv.excel_tab)
 # counter = 0
 for row in reader:
     # fill me
+    print row
 
 

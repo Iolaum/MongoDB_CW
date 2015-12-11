@@ -36,11 +36,9 @@ with open(inputFile, 'rU') as f:
     for row in reader:
 
         if len(row) == 6:
-            # notId += isValidMemberId(row[2])["num"]
-            # row[2] = isValidMemberId(row[2])["str"]
             cleanId = cleanMemberId(row[2])
             notId += cleanId['num']
-            row[2] += cleanId['str']
+            row[2] = cleanId['str']
 
             for i in range(0, len(row)):
                 # Collect elements
